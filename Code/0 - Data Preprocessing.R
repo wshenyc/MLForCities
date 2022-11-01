@@ -1,3 +1,6 @@
+#Referred heavily to this script: https://github.com/austensen/violations
+
+#####Set up#####
 library(tidyverse)
 
 
