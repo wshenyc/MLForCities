@@ -134,7 +134,8 @@ training_data <- clean_pluto %>%
   left_join(adj_bbl_viol_wide, by = "bbl") %>%
   mutate_if(is.character, as.factor) %>% 
   mutate_at(vars(matches("^(viol|comp)")), funs(if_else(is.na(.), 0, .))) %>% 
+  mutate(outcome = if_else(viol_bbl_ser_2021 > 0, "TRUE", "FALSE")) %>% 
   ungroup
 
 
-training_data %>% write_csv("training_data.csv")
+training_data %>% write_csv("housing_data.csv")
