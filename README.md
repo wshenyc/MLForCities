@@ -9,5 +9,6 @@ Predict the probability of a residential building in NYC to incur a Class C viol
 3. Bayes Network _Under construction!_
 4. [Naive Bayes](https://github.com/wshenyc/MLForCities/blob/main/Code/4-NavieBayes.ipynb) _Under construction!_ 
 
-### Paper
-Link to [Google Doc](https://docs.google.com/document/d/17377vvi2fs8fJGK8qu7xXsAkj1HveDnLFdZAx4h89_4/edit?usp=sharing) 
+### Paper & Presentation 
+Link to [paper](https://docs.google.com/document/d/17377vvi2fs8fJGK8qu7xXsAkj1HveDnLFdZAx4h89_4/edit?usp=sharing) 
+Link to [presentation](https://docs.google.com/presentation/d/1ypdQqAWCaYb-kGIyRwngbMaB8JSfPxN6PUYsBHypSGc/edit?usp=sharing)
