@@ -3,27 +3,19 @@ library(dbscan)
 library(fpc)
 library(factoextra)
 
-prob_pred_all = read_csv("prob_edit_geo.csv")
+prob_pred_all = read_csv("/Users/winnieshen/Desktop/RStudio Projects/prob_edit_geo.csv")
+#prob_pred_all = read_csv("/Users/winnieshen/Desktop/RStudio Projects/hmc_2022_slim.csv")
 
-prob_pred_dt <- prob_pred_all %>% 
-  filter(!is.na(Latitude) & dt_flag == 1)
+prob_pred_clean <- prob_pred_all %>% 
+  filter(!is.na(Latitude))
 
-locs = dplyr::select(test,Latitude,Longitude)
+locs = dplyr::select(prob_pred_clean,Longitude,Latitude)
 
 locs.scaled = scale(locs, center = T, scale = T)
 
-db = dbscan::dbscan(locs.scaled,eps=0.15,minPts = 12)
+db = dbscan::dbscan(locs.scaled,eps=0.15,minPts = 200)
 db
 
-# DBSCAN clustering for 23025 objects.
-# Parameters: eps = 0.15, minPts = 12
-# Using euclidean distances and borderpoints = TRUE
-# The clustering contains 8 cluster(s) and 125 noise points.
-# 
-# 0     1     2     3     4     5     6     7     8 
-# 125 22343   184   140    39   117    19    22    36 
-# 
-# Available fields: cluster, eps, minPts, dist, borderPoints
 
 factoextra::fviz_cluster(db,locs.scaled,stand = F,ellipse = T,geom = "point")
 
